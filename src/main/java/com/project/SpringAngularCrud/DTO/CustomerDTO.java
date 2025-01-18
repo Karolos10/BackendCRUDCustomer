@@ -1,29 +1,19 @@
-package com.project.SpringAngularCrud.Model;
+package com.project.SpringAngularCrud.DTO;
 
-import jakarta.persistence.*;
+public class CustomerDTO {
 
-@Table(name = "customers")
-@Entity
-public class Customer {
-
-    @Id
-    @Column(name = "customer_id", length = 50)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int customerId;
 
-    @Column(name = "customer_name", length = 50)
     private String customerName;
 
-    @Column(name = "customer_email", length = 60)
     private String customerEmail;
 
-    @Column(name = "mobile", length = 12)
     private int mobile;
 
-    public Customer(String customerName, String customerEmail, int mobile) {
+    public CustomerDTO() {
     }
 
-    public Customer(int customerId, String customerName, String customerEmail, int mobile) {
+    public CustomerDTO(int customerId, String customerName, String customerEmail, int mobile) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
@@ -64,7 +54,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "CustomerDTO{" +
                 "customerId=" + customerId +
                 ", customerName='" + customerName + '\'' +
                 ", customerEmail='" + customerEmail + '\'' +
